@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-shadow: border-box;
+}
+
+// Variable's
+$bgColor: #0d1a2d;
+$boxColor: hsl(216, 50%, 16%);
+$textColor: hsl(214, 27%, 61%);
+$colorCyan: hsl(178, 100%, 50%);
+$whiteColor: #ffffff;
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bgColor;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+.box {
+  background-color: $boxColor;
+  padding: 15px;
+  max-width: 270px;
+  border-radius: 10px;
+  .image {
+    position: relative;
+    overflow: hidden;
+    max-height: 250px;
+    border-radius: 10px;
+    &:hover .icon {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .icon {
+      background-color: #00fff770;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: scale(0);
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      transition: 0.3s ease;
+    }
+  }
+  .text {
+    user-select: none;
+    margin-top: 10px;
+    h2 {
+      color: $whiteColor;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.3s ease;
+      cursor: pointer;
+      margin-bottom: 10px;
+      &:hover {
+        color: $colorCyan;
+      }
+    }
+    p {
+      color: $textColor;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  }
+  article {
+    display: flex;
+    user-select: none;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    span {
+      &:first-child {
+        font-weight: bold;
+        color: $colorCyan;
+      }
+      &.day {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $textColor;
+      }
+    }
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid $textColor;
+    padding-top: 10px;
+    user-select: none;
+    img {
+      width: 40px;
+    }
+    h2 {
+      color: $textColor;
+      font-size: 13px;
+      span {
+        color: $whiteColor;
+        font-weight: bold;
+        transition: 0.3s ease;
+        cursor: pointer;
+        &:hover{
+          color: $colorCyan;
+        }
+      }
+    }
+  }
+}
